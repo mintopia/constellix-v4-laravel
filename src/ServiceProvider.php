@@ -14,7 +14,6 @@ class ServiceProvider extends LaravelServiceProvider
     protected function boot(): void
     {
         $this->publishes([
-            /** @phpstan-ignore-next-line */
             __DIR__ . '/../config/constellix.php' => config_path('constellix.php'),
         ]);
     }
@@ -22,11 +21,15 @@ class ServiceProvider extends LaravelServiceProvider
     public function register()
     {
         $this->app->bind(abstract: ConstellixApi::class, concrete: function (Application $app) {
-            return new Client(
+            $client = new Client(
                 client: $app->make(ClientInterface::class),
                 paginatorFactory: new IlluminatePaginatorFactory(),
                 logger: $app->make(LoggerInterface::class)
             );
+            $client->setEndpoint(config('constellix.endpoint'));
+            $client->setApiKey(config('constellix.api_key'));
+            $client->setSecretKey(config('constellix.secret_key'));
+            return $client;
         });
     }
 }

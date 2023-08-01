@@ -1,0 +1,11 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function config not found\\.$#"
+			count: 3
+			path: src/ServiceProvider.php
+
+		-
+			message: "#^Function config_path not found\\.$#"
+			count: 1
+			path: src/ServiceProvider.php
