@@ -1,14 +1,15 @@
-name: PHPStan
+name: Code Quality
 
 on:
   push:
     paths:
       - '**.php'
       - 'phpcs.xml'
+      - 'phpstan.neon'
 
 jobs:
-  phpstan:
-    name: phpcs
+  codequality:
+    name: codequality
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,3 +25,6 @@ jobs:
 
       - name: Run PHPCS
         run: ./vendor/bin/phpcs
+
+      - name: Run PHPStan
+        run: ./vendor/bin/phpstan
