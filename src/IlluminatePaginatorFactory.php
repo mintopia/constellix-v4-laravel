@@ -16,6 +16,11 @@ class IlluminatePaginatorFactory implements PaginatorFactoryInterface
      */
     public function paginate(array $items, int $totalItems, int $perPage, int $currentPage = 1)
     {
-        return new LengthAwarePaginator($items, $totalItems, $perPage, $currentPage);
+        return new LengthAwarePaginator(
+            items: $items,
+            total: $totalItems,
+            perPage: $perPage,
+            currentPage: $currentPage
+        );
     }
 }

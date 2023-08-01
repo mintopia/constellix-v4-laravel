@@ -22,7 +22,7 @@
         "phpunit/phpunit": "^10.2"
     },
     "require": {
-        "php": "^7.4||^8",
+        "php": "^8.0||^8.1||^8.2",
         "tiggee/constellix-v4-client": "dev-feature/refactor",
         "illuminate/support": "^9|^10",
         "illuminate/pagination": "^9|^10"

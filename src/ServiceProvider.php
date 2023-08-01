@@ -21,11 +21,11 @@ class ServiceProvider extends LaravelServiceProvider
 
     public function register()
     {
-        $this->app->bind(ConstellixApi::class, function (Application $app) {
+        $this->app->bind(abstract: ConstellixApi::class, concrete: function (Application $app) {
             return new Client(
-                $app->make(ClientInterface::class),
-                new IlluminatePaginatorFactory(),
-                $app->make(LoggerInterface::class)
+                client: $app->make(ClientInterface::class),
+                paginatorFactory: new IlluminatePaginatorFactory(),
+                logger: $app->make(LoggerInterface::class)
             );
         });
     }
