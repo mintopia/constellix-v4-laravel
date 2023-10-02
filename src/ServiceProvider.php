@@ -3,9 +3,9 @@
 namespace Tiggee\ConstellixApiLaravel;
 
 use Constellix\Client\Client;
-use GuzzleHttp\ClientInterface;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
+use Psr\Http\Client\ClientInterface;
 use Psr\Log\LoggerInterface;
 use Tiggee\ConstellixApiLaravel\Contracts\ConstellixApi;
 

@@ -22,10 +22,11 @@
         "phpunit/phpunit": "^9.6||^10.2"
     },
     "require": {
-        "php": "^8.0||^8.1||^8.2",
-        "tiggee/constellix-v4-client": "dev-feature/refactor",
+        "php": "^8.0||^8.1||^8.2||^8.3",
+        "tiggee/constellix-v4-client": "^1.0",
         "illuminate/support": "^9|^10",
-        "illuminate/pagination": "^9|^10"
+        "illuminate/pagination": "^9|^10",
+        "psr/http-client": "^1.0"
     },
     "extra": {
         "laravel": {
