@@ -67,12 +67,6 @@ $api = resolve(ConstellixApiClient::class);
 $domain = $api->domains->get(1234);
 ```
 
-### Facade
-```php
-<?php
-$domain = \ConstellixApi::domains->get(1234);
-```
-
 ## API Usage
 
 For usage of the API client, please [read the documentation](https://github.com/Constellix/constellix-php-sdk) supplied for the client on GitHub.
