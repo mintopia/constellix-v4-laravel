@@ -2,8 +2,8 @@
 
 namespace Tiggee\ConstellixApiLaravel\Contracts;
 
-use Constellix\Client\Interfaces\ClientInterface;
+use Constellix\Client\Interfaces\ConstellixApiClient;
 
-interface ConstellixApi extends ClientInterface
+interface ConstellixApi extends ConstellixApiClient
 {
 }
