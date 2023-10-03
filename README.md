@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This library allows easy integration of the Constellix V4 API into a Laravel application. It adds a Service Provider, Facade and exposes LengthAwarePaginators for resources.
+This library allows easy integration of the Constellix V4 API into a Laravel application. It adds a Service Provider and exposes LengthAwarePaginators for resources.
 
 ## Installation
 
@@ -41,7 +41,7 @@ You can also specify `CONSTELLIX_API_ENDPOINT` if you want to override the endpo
 
 ## Usage
 
-The API's contract is registered as an interface, so can be typehinted in constructors. There is also a Facade `ConstellixApi` that can be used.
+The API's contract is registered as an interface, so can be typehinted in constructors.
 
 ### Type Hinting
 ```php
@@ -86,3 +86,27 @@ This is an open-source project and if you have any problems with it, please rais
 We use PHPStan with a level of 8 and follow PSR-12 coding standards, enforced with PHP Code Sniffer. Testing is using PHP Unit.
 
 The scripts have been added to composer.json.
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2020 Constellix, a subsidiary of Tiggee LLC.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
