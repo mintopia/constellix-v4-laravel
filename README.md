@@ -28,12 +28,6 @@ If you are not using auto-discovery for packages, you can add the service provid
 Tiggee\ConstellixApiLaravel\ServiceProvider::class,
 ```
 
-And to add the facade, add the following to the `facades`  in `config/app.php`:
-
-```php
-'ConstellixApi' => \Tiggee\ConstellixApiLaravel\Facades\ConstellixApi::class,
-```
-
 ## Configuration
 
 The configuration file that is published is configured to use environment variables for the configuration:
@@ -54,11 +48,11 @@ The API's contract is registered as an interface, so can be typehinted in constr
 <?php
 namespace App\Http\Controllers;
 
-use Tiggee\ConstellixApiLaravel\Contracts\ConstellixApi;
+use Constellix\Client\Interfaces\ConstellixApiClient;
 
 class HomeController extends Controller {
 
-    public function index(ConstellixApi $api): void
+    public function index(ConstellixApiClient $api): void
     {
         $domain = $api->domains->get(1234);
     }
@@ -68,7 +62,8 @@ class HomeController extends Controller {
 ### Service Container Resolution
 ```php
 <?php
-$api = resolve(\Tiggee\ConstellixApiLaravel\Contracts\ConstellixApi::class);
+use Constellix\Client\Interfaces\ConstellixApiClient;
+$api = resolve(ConstellixApiClient::class);
 $domain = $api->domains->get(1234);
 ```
 

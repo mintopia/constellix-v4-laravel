@@ -3,10 +3,10 @@
 namespace Tiggee\ConstellixApiLaravel;
 
 use Constellix\Client\Client;
+use Constellix\Client\Interfaces\ConstellixApiClient;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 use Psr\Log\LoggerInterface;
-use Tiggee\ConstellixApiLaravel\Contracts\ConstellixApi;
 
 class ServiceProvider extends LaravelServiceProvider
 {
@@ -19,7 +19,7 @@ class ServiceProvider extends LaravelServiceProvider
 
     public function register()
     {
-        $this->app->bind(abstract: ConstellixApi::class, concrete: function (Application $app) {
+        $this->app->bind(abstract: ConstellixApiClient::class, concrete: function (Application $app) {
             $client = new Client(
                 client: new \GuzzleHttp\Client(),
                 paginatorFactory: new IlluminatePaginatorFactory(),
